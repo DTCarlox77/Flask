@@ -1,0 +1,12 @@
+{% extends 'commerce/layouts/main.html' %}
+
+
+{% block title %}
+    {{ producto.nombre }}
+{% endblock title %}
+
+{% block body %}
+    {{ producto }}
+    <h1>Nombre: {{ producto.nombre }}</h1>
+    <h4>Precio del producto: {{ producto.precio }} $</h4>
+{% endblock body %}

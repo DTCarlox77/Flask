@@ -1,0 +1,35 @@
+{% extends "commerce/layouts/main.html" %}
+
+{% block title %}Mis Productos{% endblock title %}
+
+{% block body %}
+<br>
+<h1>Estos son mis productos</h1>
+<hr>
+
+<div class="container">
+
+    {% include 'commerce/components/formulario_producto.html' %}
+
+    <hr>
+
+    {% if lista_productos %}
+        
+        <ul>
+            {% for producto in lista_productos %}
+                <h1>{{ producto.id }}</h1>
+                <a href="{{ url_for('producto_especifico', id=producto.id) }}"><li><h2>{{ producto.nombre }}</h2></li></a>
+                <li><h4>{{ producto.precio }}</h4></li>
+                <hr>
+            {% endfor %}
+        </ul>
+        
+    {% else %}
+
+        <p>No hay productos</p>
+    
+    {% endif %}
+        
+</div>
+
+{% endblock body %}
